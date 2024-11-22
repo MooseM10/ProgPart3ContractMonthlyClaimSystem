@@ -2,6 +2,7 @@
 
 The **Contract Monthly Claim System** is an ASP.NET Core MVC application designed to manage and streamline the process of submitting, verifying, and approving monthly claims. This system ensures that claims flow smoothly through various roles, including Lecturer, Program Coordinator, Academic Manager, and Human Resource views.
 
+Link for the video: https://youtu.be/R3plHAAxnsM
 ---
 
 ## **Features**
