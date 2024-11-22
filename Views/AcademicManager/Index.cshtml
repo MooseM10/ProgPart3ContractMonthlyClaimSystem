@@ -6,3 +6,37 @@
     });
     connection.start();
 </script>
+
+@model List<ContractMonthlyClaimSystem.Models.Claim>
+
+<h1>Pending Claims</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Lecturer Name</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.LecturerName</td>
+                <td>@claim.TotalAmount</td>
+                <td>@claim.Status</td>
+                <td>
+                    <form asp-action="Approve" method="post">
+                        <input type="hidden" name="claimId" value="@claim.Id" />
+                        <button type="submit">Approve</button>
+                    </form>
+                    <form asp-action="Reject" method="post">
+                        <input type="hidden" name="claimId" value="@claim.Id" />
+                        <button type="submit">Reject</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
